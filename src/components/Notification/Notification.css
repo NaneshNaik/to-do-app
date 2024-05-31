@@ -1,0 +1,115 @@
+.notification-wrapper {
+  position: fixed;
+  width: fit-content;
+  max-width: 400px;
+  min-width: 250px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px;
+  margin: 0px auto;
+  z-index: 1000;
+}
+
+.notification-wrapper .notification {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px 10px 15px 10px;
+  border-radius: 10px;
+  column-gap: 10px;
+  color: white;
+  background-color: purple;
+  overflow: hidden;
+}
+
+.notification-wrapper .notification .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.notification-wrapper .notification .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
+  margin-right: 10px;
+}
+
+.notification-wrapper .notification .text .title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.notification-wrapper .notification .text .notification-text {
+  font-size: 0.9rem;
+}
+
+.notification-wrapper .notification .text .description {
+  font-size: 0.9rem;
+}
+
+.notification-wrapper .notification .button {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.notification-wrapper .notification .button button {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 2px;
+  border-radius: 5px;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.notification-wrapper .notification .button button:hover {
+  background-color: gray;
+  color: white;
+}
+
+.notification-wrapper .notification .button.rotateOnHover button svg {
+  transition: 0.25s;
+}
+
+.notification-wrapper .notification .button.rotateOnHover button:hover>svg {
+  transform: rotate(90deg);
+}
+
+.notification-wrapper .notification .progress-bar {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 0px;
+  left: 0px;
+  background-color: gray;
+  animation: reduceWidth 5s linear forwards;
+}
+
+@keyframes reduceWidth {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .notification-wrapper {
+    width: auto;
+  }
+}

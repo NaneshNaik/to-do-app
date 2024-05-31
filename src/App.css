@@ -1,0 +1,21 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #efeeee;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  padding: 10px 10px 20px 10px;
+}
+
+.main {
+  margin-top: 20px;
+}

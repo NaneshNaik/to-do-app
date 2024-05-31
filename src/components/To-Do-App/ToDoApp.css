@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.to-do-main {
+    display: flex;
+    justify-content: center;
+}
+
+.to-do {
+    /* max-width: 90%; */
+    max-width: 1000px;
+    min-width: 500px;
+    height: fit-content;
+    padding: 40px 20px 20px 20px;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+.to-do .todo-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.to-do .todo-input .input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    /* width: 100%; */
+}
+
+.to-do .todo-input .input-field .input-section {
+    width: 100%;
+}
+
+.to-do .todo-input .input-field .addDescButton {
+    /* width: 91px; */
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    background-color: lightslategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.to-do .todo-input .input-field .addDescButton:hover {
+    background-color: rgb(73, 113, 153);
+}
+
+.to-do .todo-input .input-field .description .removeDescButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    color: lightslategray;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: white;
+    z-index: 20;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.to-do .todo-input .input-field .description input.valid~.removeDescButton,
+.to-do .todo-input .input-field .description input:focus~.removeDescButton {
+    color: white;
+    background-color: lightslategray;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.to-do .todo-input .input-field .description input.valid~.removeDescButton:hover,
+.to-do .todo-input .input-field .description input:focus~.removeDescButton:hover {
+    background-color: rgb(73, 113, 153);
+}
+
+.to-do .todo-input .input-field .description .removeDescButton:hover {
+    color: white;
+    background-color: rgb(73, 113, 153);
+}
+
+.to-do .todo-input input {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    font-size: 1.05rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    z-index: 10;
+}
+
+.to-do .todo-input .description input {
+    padding: 0px 40px 0px 10px;
+}
+
+.input-field span {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    pointer-events: none;
+    font-size: 1em;
+    font-weight: 500;
+    color: #8f8f8f;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.input-field input.valid~span,
+.input-field input:focus~span {
+    color: white;
+    transform: translateX(0px) translateY(-40px);
+    font-size: 0.85em;
+}
+
+.input-field i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.input-field input.valid~i,
+.input-field input:focus~i {
+    height: 100%;
+}
+
+.input-field .input-section {
+    position: relative;
+}
+
+
+.to-do .todo-input .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to-do .todo-input button {
+    height: 100%;
+    max-height: 104.4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+    padding: 0px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: lightslategray;
+    transition: 0.25s;
+}
+
+.to-do .todo-input button:hover {
+    background-color: rgb(73, 113, 153);
+}
+
+.to-do .line {
+    background-color: brown;
+    height: 2px;
+    border-radius: 20px;
+    margin: 30px 0px 30px 0px;
+}
+
+.todos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todos .todos-text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20px;
+    background-color: #efeeee;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.todos.haveTodos .todos-text {
+    justify-content: space-between;
+}
+
+.todos .todos-text .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: dimgray;
+}
+
+.todos .todos-text .checkbox {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.todos .todos-text .checkbox-line {
+    width: 2px;
+    border-radius: 20px;
+    background-color: dimgray;
+}
+
+.todos .todos-text .checkbox .checkbox-text {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: dimgray;
+}
+
+.todos .todos-text .checkbox input {
+    display: none;
+}
+
+.todos .todos-text .checkbox .checkbox__1 {
+    display: flex;
+    justify-content: center;
+}
+
+.todos .todos-text .checkbox .checkbox__1 label {
+    box-shadow: 3px 3px 3px #b8b9be, -3px -3px 6px #fff;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    padding: 5px;
+}
+
+.todos .todos-text .checkbox .checkbox__1 label:hover i {
+    transform: scale(1.1);
+}
+
+.todos .todos-text .checkbox .checkbox__1 label i {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #5A5A5A;
+    transition: 0.3s ease;
+}
+
+.todos .todos-text .checkbox .checkbox__1 input:checked~label {
+    box-shadow: inset 3px 3px 6px #b8b9be,inset -3px -3px 7px #fff;
+}
+
+.todos .todos-text .checkbox .checkbox__1 input:checked~label i {
+    color: #6d5dfc;
+}
+
+.noTodos {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.todos ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.todos ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.todos ul li.editMode {
+    background-color: rgb(210, 242, 248);
+}
+
+.todos ul li.isCompleted {
+    opacity: 0.5;
+}
+
+.todos ul li.isCompleted .todo-listItem .todo .title,
+.todos ul li.isCompleted .todo-listItem .todo .description {
+    text-decoration: line-through;
+}
+
+.todos ul li .index {
+    width: 40px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: darkslategray;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.todos ul li.editMode .index {
+    cursor: not-allowed;
+}
+
+.todos ul li.editMode .index:hover {
+    background-color: lightgray;
+}
+
+.todos ul li .index:hover {
+    background-color: rgb(184, 182, 182);
+}
+
+.todos ul li .todo-listItem {
+    display: flex;
+    width: 100%;
+}
+
+.todos ul li .todo-listItem .todoEditForm {
+    display: flex;
+    width: 100%;
+}
+
+.todos ul li .todo-listItem .todo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-right: 20px;
+}
+
+.todos ul li .todo-listItem .todo .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.todos ul li .todo-listItem .todo input {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: rgb(102, 101, 101);
+    background-color: transparent;
+}
+
+.todos ul li .todo-listItem .todo .title .titleEdit {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.todos ul li .todo-listItem .todo .description {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.todos ul li .todo-listItem .todo .description .descriptionEdit {
+    font-size: 1rem;
+}
+
+.todos ul li .todo-listItem .todo-button {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.todos ul li .todo-listItem .todo-button button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.todos ul li .todo-listItem .todo-button button.delete {
+    background-color: rgb(226, 69, 69);
+}
+
+.todos ul li .todo-listItem .todo-button button.delete:hover {
+    background-color: rgb(230, 30, 30);
+}
+
+.todos ul li .todo-listItem .todo-button button.edit {
+    background-color: rgb(132, 99, 209);
+}
+
+.todos ul li.isCompleted .todo-listItem .todo-button button.edit {
+    cursor: not-allowed;
+}
+
+.todos ul li.isCompleted .todo-listItem .todo-button button.edit:hover {
+    background-color: rgb(132, 99, 209);
+}
+
+.todos ul li .todo-listItem .todo-button button.edit:hover {
+    background-color: rgb(103, 58, 207);
+}
+
+.todos ul li .todo-listItem .todo-button button.submit {
+    background-color: #059033;
+}
+
+.todos ul li .todo-listItem .todo-button button.submit:hover {
+    background-color: #008000;
+}
+
+@media only screen and (max-width: 740px) {
+    .to-do {
+        width: 100%;
+        min-width: 250px;
+        padding: 40px 10px 10px 10px;
+        border-radius: 10px;
+    }
+
+    .to-do .todo-input .input-field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* row-gap: 40px; */
+    }
+
+    .to-do .todo-input .input-field .addDescButton {
+        margin-top: 20px;
+    }
+
+    .to-do .todo-input .input-field .input-section.description {
+        margin-top: 40px;
+    }
+
+    .to-do .todo-input input {
+        width: 100%;
+    }
+
+    .input-field input.valid~span,
+    .input-field input:focus~span {
+        color: white;
+        transform: translateX(0px) translateY(-40px);
+        font-size: 0.85em;
+    }
+
+    .todos ul li .todo-listItem .todo .title {
+        font-size: 1rem;
+    }
+
+    .todos ul li .todo-listItem .todo .title .titleEdit {
+        font-size: 1rem;
+    }
+
+    .todos ul li .todo-listItem .todo .description {
+        font-size: 1rem;
+    }
+
+    .todos ul li .todo-listItem .todo .description .descriptionEdit {
+        font-size: 1rem;
+    }
+}
